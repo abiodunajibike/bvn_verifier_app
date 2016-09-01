@@ -1,0 +1,60 @@
+{% extends 'bvn/base.html' %}    
+        
+{% block page_title %}
+    <title>BVN Validator - Enter your BVN</title>
+{% endblock page_title %}
+
+{% block container_content %}
+ 
+<form class="form-signin" method="POST" action="" id="enter_bvn">
+{% csrf_token %}
+
+    <h3 class="form-signin-heading text-center">Verify your BVN Information with your phone</h3>
+    
+    {% for msg in messages %}
+      <h5 class="form-signin-heading text-center text-danger">{{ msg }}</h5>
+    {% endfor %}
+    
+    <div class="row-fluid">
+        <label>Merchant Key</label>
+        <input type="text" name="merchant_key" id="id_merchant_key" class="form-control" value="tk_biDdQrtXvO" readonly>
+    </div>
+    
+    <div class="row-fluid">
+        <label>API Key</label>
+        <input type="text" name="api_key" id="id_api_key" class="form-control" value="tk_HhfBSYgKZwid1E8G9yPF" readonly>
+    </div>
+    
+    <div class="row-fluid">
+        <label>BVN Number</label>
+        <input type="text" name="bvn_no" id="id_bvn_no" class="form-control" required autofocus>
+    </div>
+    
+    <div class="row-fluid">
+        <label>Verification Mode</label>
+        <select name="verifyUsing" id="id_verifyUsing" class="form-control">
+            <option value="SMS">SMS</option>
+            <option value="Voice">Voice</option>
+        </select>
+    </div>
+    
+    <div class="row-fluid">
+        <label>Country</label>
+        <select name="country" id="id_country" class="form-control">
+            <option value="NGN">Nigeria</option>
+        </select>
+    
+       
+    </div>
+    
+    <div class="row-fluid" style="padding-top: 40px;">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+    </div>
+    
+</form>
+
+{% endblock container_content %}
+
+ 
+  
+
