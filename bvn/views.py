@@ -107,9 +107,9 @@ def validation_result(request):
         
         context.update({'data': validate_json['data']})
         
-        '''Clear saved values from session'''
-        keys_list = ['api_key', 'merchant_key', 'verifyUsing', 'country', 'transactionReference', 'bvn']
-        clear_values_from_session(request, keys_list)
+        # '''Clear saved values from session'''
+        # keys_list = ['api_key', 'merchant_key', 'verifyUsing', 'country', 'transactionReference', 'bvn']
+        # clear_values_from_session(request, keys_list)
         
     return render(request, 'bvn/bvn_verification_result.html', context)
     
